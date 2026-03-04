@@ -17,12 +17,11 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  // ✅ ДЛЯ VITE: используем import.meta.env
   const EMAILJS_CONFIG = {
-    serviceId: import.meta.env.REACT_APP_EMAILJS_SERVICE_ID,
-    templateId: import.meta.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-    publicKey: import.meta.env.REACT_APP_EMAILJS_PUBLIC_KEY
-  };
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+};
 
   useEffect(() => {
     const handleScroll = () => {
