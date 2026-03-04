@@ -17,11 +17,11 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  // ✅ ПРАВИЛЬНЫЕ ДАННЫЕ ИЗ ВАШЕГО АККАУНТА
+  // ✅ ДЛЯ VITE: используем import.meta.env
   const EMAILJS_CONFIG = {
-    serviceId: 'service_rdpq80g',      // Ваш Service ID
-    templateId: 'template_04mgm4u',    // ✅ ИСПРАВЛЕНО: правильный Template ID
-    publicKey: 'wPycCmgpKeOIZzgu2'     // Ваш Public Key
+    serviceId: import.meta.env.REACT_APP_EMAILJS_SERVICE_ID,
+    templateId: import.meta.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+    publicKey: import.meta.env.REACT_APP_EMAILJS_PUBLIC_KEY
   };
 
   useEffect(() => {
@@ -631,7 +631,7 @@ function App() {
           </div>
           
           <div className="footer-bottom">
-            <p>&copy; 2026 DigitalPro. Все права защищены.</p>
+            <p>&copy; 2024 DigitalPro. Все права защищены.</p>
             <p>Сделано с ❤️ в Москве</p>
           </div>
         </div>
